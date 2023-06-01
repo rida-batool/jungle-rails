@@ -3,7 +3,7 @@
   <% if @empty_cart_message %>
     <div> 
     <h1><%= @empty_cart_message %></h1>
-    <%= link_to "Go to Homepage", root_path %>
+    <%= link_to "Go to Homepage", root_path, class: 'btn btn-lg btn-primary' %>
     </div>
 
   <% else %>
