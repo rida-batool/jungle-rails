@@ -1,0 +1,30 @@
+
+<!-- app/views/users/new.html.erb -->
+
+<header class="page-header">
+<h1> &raquo; Signup!</h1>
+</header>
+
+<div>
+<%= form_for @user, url: '/users' do |f| %>
+
+  <% if f.object.errors.any? %>
+  <div class="alert alert-danger">
+    <strong>The following errors prevented saving:</strong>
+    <ul>
+      <% f.object.errors.full_messages.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  First Name: <%= f.text_field :firstname %> <br>
+  Last Name: <%= f.text_field :lastname %> <br>
+  Email: <%= f.text_field :email %> <br>
+  Password: <%= f.password_field :password %> <br>
+  Password Confirmation: <%= f.password_field :password_confirmation %> <br>
+  <%= f.submit "Submit" %> <br>
+
+<% end %>
+</div>

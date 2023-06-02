@@ -1,0 +1,16 @@
+
+<header class="page-header">
+<h1>&raquo; Login</h1>
+</header>
+
+<%= form_tag '/login' do %>
+
+  <% if flash[:error] %>
+    <p class="error-message"><%= flash[:error] %></p>
+  <% end %>
+
+  Email: <%= text_field_tag :email %> <br>
+  Password: <%= password_field_tag :password %>
+  <%= submit_tag "Submit" %>
+
+<% end %>
