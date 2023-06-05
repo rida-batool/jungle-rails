@@ -94,6 +94,7 @@ GEM
     childprocess (4.1.0)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
+    date (3.3.3)
     diff-lcs (1.5.0)
     dotenv (2.7.6)
     dotenv-rails (2.7.6)
@@ -144,6 +145,11 @@ GEM
       money (~> 6.13)
       railties (>= 3.0)
     msgpack (1.5.1)
+    net-imap (0.3.4)
+      date
+      net-protocol
+    net-pop (0.1.2)
+      net-protocol
     net-protocol (0.2.1)
       timeout
     net-smtp (0.3.3)
@@ -295,6 +301,8 @@ DEPENDENCIES
   jquery-rails
   listen (~> 3.3)
   money-rails
+  net-imap
+  net-pop
   net-smtp
   pg
   puma (~> 5.0)
