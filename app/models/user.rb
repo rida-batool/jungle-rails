@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   validates :firstname, presence: true
   validates :lastname, presence: true
-  validates :email, presence: true
-  validates :password, presence: true
+  validates :email, presence: true, uniqueness: { case_sensitive: false }
+  validates :password, presence: true, length: { minimum: 7 }
   validates :password_confirmation, presence: true
 end
