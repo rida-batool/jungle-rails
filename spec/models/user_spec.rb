@@ -53,7 +53,42 @@ RSpec.describe User, type: :model do
       expect(user).to be_invalid
       expect(user.errors.full_messages).to include("Password is too short (minimum is 7 characters)")
     end
-
-
   end
+
+  describe '.authenticate_with_credentials' do
+   
+      it 'should return user instance if authenticated successfully' do
+        user = User.create( firstname: 'John',
+                            lastname: 'Doe',
+                            email: 'test@example.com',
+                            password: 'password',
+                            password_confirmation: 'password')
+
+        authenticated_user = User.authenticate_with_credentials('test@example.com', 'password')
+        expect(authenticated_user).to be_an_instance_of(User)
+      end
+
+      it 'should authenticate user if there are leading and trailing spaces in email' do
+        user = User.create( firstname: 'John',
+                            lastname: 'Doe',
+                            email: 'test@example.com',
+                            password: 'password',
+                            password_confirmation: 'password')
+
+        authenticated_user = User.authenticate_with_credentials('  test@example.com   ', 'password')
+        expect(authenticated_user).to be_an_instance_of(User)            
+      end
+
+      it 'should authenticate (case-insensitive)' do
+        user = User.create( firstname: 'John',
+                            lastname: 'Doe',
+                            email: 'test@example.com',
+                            password: 'password',
+                            password_confirmation: 'password')
+
+        authenticated_user = User.authenticate_with_credentials('TesT@example.com', 'password')
+        expect(authenticated_user).to be_an_instance_of(User)            
+      end
+  end
+
 end
