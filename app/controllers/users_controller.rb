@@ -11,7 +11,6 @@ class UsersController < ApplicationController
       redirect_to '/'
     else
       render :new
-      #redirect_to '/signup'
     end
   end
 

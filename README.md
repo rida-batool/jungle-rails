@@ -1,6 +1,6 @@
 # Jungle
 
-A mini e-commerce application built with Rails 6.1 for purposes of teaching Rails by example.
+A mini e-commerce application built with Rails 6.1.  Users can Signup, add or remove items from the cart and checkout using a credit car. 
 
 ## Setup
 
@@ -29,3 +29,12 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 - Bootstrap 5
 - PostgreSQL 9.x
 - Stripe
+
+## Demo
+
+![](/images/jungle%20top%20nav.PNG)
+![](/images/allProducts.PNG)
+![](/images/product-details.PNG)
+![](/images/myCart.PNG)
+![](/images/checkout.PNG)
+![](/images/admin-products.PNG)
