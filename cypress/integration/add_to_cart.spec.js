@@ -17,5 +17,13 @@ describe('Jungle app', () => {
     cy.get(".products article").should("have.length", 2);
   });
 
-});
+  it("Add item to cart and cart count shows 1", () => {
+    cy.contains("My Cart (0)");
+    cy.contains("Add").first().click({ force: true });
+    cy.contains("My Cart (1)");
 
+    // cy.get(".products article .btn").first().click();
+    // cy.get(".nav-item .nav-link").should("conatin.text", "My Cart (1)");
+  });
+
+});
